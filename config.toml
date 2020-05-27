@@ -1,0 +1,48 @@
+baseURL = "https://blog.shit-hub.com"
+languageCode = "zh-CN"
+title = "SH IT Blog"
+hasCJKLanguage = true
+theme = "maupassant-hugo"
+enableRobotsTXT = true
+PaginatePath = "page"
+
+[author]
+    name = "Sanjo Heron"
+    homepage = "https://www.shit-hub.com"
+
+[params]
+    subtitle = ""
+    description = ""
+    keywords = "Blog"
+
+    customCSS = ["style.extra.css"]
+    customJS = ["app.extra.js"]
+
+[params.utteranc]
+    repo = "JokerQyou/comments"
+    issueTerm = "url"
+    theme = "github-light"
+
+[[menu.main]]
+    identifier = "categories"
+    name = "Categories"
+    url = "/categories/"
+    weight = 1
+
+[[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
+    weight = 2
+
+[[menu.main]]
+    identifier = "archives"
+    name = "Archives"
+    url = "/archives/"
+    weight = 3
+
+[[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 4
