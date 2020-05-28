@@ -18,11 +18,6 @@ PaginatePath = "page"
     customCSS = ["style.extra.css"]
     customJS = ["app.extra.js"]
 
-[params.utteranc]
-    repo = "JokerQyou/comments"
-    issueTerm = "url"
-    theme = "github-light"
-
 [[menu.main]]
     identifier = "categories"
     name = "Categories"
