@@ -1,7 +1,7 @@
 ---
 title: "About"
-date: 2020-05-28T20:28:43+08:00
-type: about
+date: 2020-05-28T14:20:27+08:00
+draft: false
 ---
 # Personal Information
 - Name: Sanjo Heron
