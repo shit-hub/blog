@@ -12,27 +12,27 @@ draft: false
 ## hugo安装
 ### 下载二进制文件
 到[Hugo官网](https://github.com/gohugoio/hugo/releases)选取对应的二进制包；以0.71.1版本为例：
-```bash
+```
 wget https://github.com/gohugoio/hugo/releases/download/v0.71.1/hugo_0.71.1_Linux-64bit.tar.gz
 ```
 ### 解压到PATH路径hugo + github action
-```bash
+```
 tar zxvf hugo_0.71.1_Linux-64bit.tar.gz -C /usr/bin hugo
 ```
 
 ## github配置
 在github上创建名为blog的仓库，然后下载到本地
-```bash
+```
 git clone https://github.com/<username>/blog.git
 ```
 切换到存储hugo源码的分支
-```bash
+```
 git checkout -b hugo
 ```
 
 ## 生成博客
 ### 初始化网站
-```bash
+```
 cd blog
 # 由于当前目录已存在.git文件夹，需要添加--force强制生成
 hugo new site . --force
@@ -42,12 +42,12 @@ hugo new site . --force
 ### 主题配置
 到(hugo theme)[https://themes.gohugo.io/]选取主题，然后按照主题指示安装配置， 以maupassant为例
 1. 下载主题
-```bash
+```
 git submodule add https://github.com/shit-hub/maupassant-hugo.git themes/maupassant-hugo
 ```
 
 2. 配置config.toml
-```yaml
+```
 baseURL = "https://blog.shit-hub.com"
 languageCode = "zh-CN"
 title = "SH IT Blog"
@@ -101,7 +101,7 @@ PaginatePath = "page"
 
 ## 配置Github Action
 ### 生成密钥对
-```bash
+```
 ssh-keygen -t rsa -b 4096 -C "your_email" -f gh-pages -N ""
 ```
 
@@ -112,7 +112,7 @@ ssh-keygen -t rsa -b 4096 -C "your_email" -f gh-pages -N ""
 
 ### 制定Action
 打开项目中的Action，添加新的workflow，添加以下代码
-```yml
+```
 name: github pages
 
 on:
