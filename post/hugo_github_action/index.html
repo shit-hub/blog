@@ -4,64 +4,64 @@
 <a href=https://blog.shit-hub.com/archives/ title=Archives>Archives</a>
 <a href=https://blog.shit-hub.com/about/ title=About>About</a></nav></div></div></div></header><div id=body><div class=container><div class=col-group><div class=col-8 id=main><div class=res-cons><article class=post><header><h1 class=post-title>Hugo + Github Action</h1></header><date class="post-meta meta-date">2020.5.27
 20:28</date><div class="post-meta meta-category">，Classed as
-<a href=/categories/blog>Blog</a></div><aside id=toc class=dismissed><span class=toc-title>Directory <a href=# class=toc-dismiss></a></span><nav id=TableOfContents><ul><li><a href=#hugo>hugo安装</a><ul><li><a href=#heading>下载二进制文件</a></li><li><a href=#pathhugo--github-action>解压到PATH路径hugo + github action</a></li></ul></li><li><a href=#github>github配置</a></li><li><a href=#heading-1>生成博客</a><ul><li><a href=#heading-2>初始化网站</a></li><li><a href=#heading-3>主题配置</a></li></ul></li><li><a href=#github-action>配置Github Action</a><ul><li><a href=#heading-4>生成密钥对</a></li><li><a href=#heading-5>配置项目</a></li><li><a href=#action>制定Action</a></li></ul></li><li><a href=#heading-6>测试</a></li></ul></nav></aside><div class=post-content><h2 id=hugo>hugo安装</h2><h3 id=heading>下载二进制文件</h3><p>到<a href=https://github.com/gohugoio/hugo/releases>Hugo官网</a>选取对应的二进制包；以0.71.1版本为例：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>wget https://github.com/gohugoio/hugo/releases/download/v0.71.1/hugo_0.71.1_Linux-64bit.tar.gz
-</code></pre></div><h3 id=pathhugo--github-action>解压到PATH路径hugo + github action</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>tar zxvf hugo_0.71.1_Linux-64bit.tar.gz -C /usr/bin hugo
-</code></pre></div><h2 id=github>github配置</h2><p>在github上创建名为blog的仓库，然后下载到本地</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>git clone https://github.com/&lt;username&gt;/blog.git
-</code></pre></div><p>切换到存储hugo源码的分支</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>git checkout -b hugo
-</code></pre></div><h2 id=heading-1>生成博客</h2><h3 id=heading-2>初始化网站</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>cd blog
-<span style=color:#75715e># 由于当前目录已存在.git文件夹，需要添加--force强制生成</span>
+<a href=/categories/blog>Blog</a></div><aside id=toc class=dismissed><span class=toc-title>Directory <a href=# class=toc-dismiss></a></span><nav id=TableOfContents><ul><li><a href=#hugo>hugo安装</a><ul><li><a href=#heading>下载二进制文件</a></li><li><a href=#pathhugo--github-action>解压到PATH路径hugo + github action</a></li></ul></li><li><a href=#github>github配置</a></li><li><a href=#heading-1>生成博客</a><ul><li><a href=#heading-2>初始化网站</a></li><li><a href=#heading-3>主题配置</a></li></ul></li><li><a href=#github-action>配置Github Action</a><ul><li><a href=#heading-4>生成密钥对</a></li><li><a href=#heading-5>配置项目</a></li><li><a href=#action>制定Action</a></li></ul></li><li><a href=#heading-6>测试</a></li></ul></nav></aside><div class=post-content><h2 id=hugo>hugo安装</h2><h3 id=heading>下载二进制文件</h3><p>到<a href=https://github.com/gohugoio/hugo/releases>Hugo官网</a>选取对应的二进制包；以0.71.1版本为例：</p><pre><code>wget https://github.com/gohugoio/hugo/releases/download/v0.71.1/hugo_0.71.1_Linux-64bit.tar.gz
+</code></pre><h3 id=pathhugo--github-action>解压到PATH路径hugo + github action</h3><pre><code>tar zxvf hugo_0.71.1_Linux-64bit.tar.gz -C /usr/bin hugo
+</code></pre><h2 id=github>github配置</h2><p>在github上创建名为blog的仓库，然后下载到本地</p><pre><code>git clone https://github.com/&lt;username&gt;/blog.git
+</code></pre><p>切换到存储hugo源码的分支</p><pre><code>git checkout -b hugo
+</code></pre><h2 id=heading-1>生成博客</h2><h3 id=heading-2>初始化网站</h3><pre><code>cd blog
+# 由于当前目录已存在.git文件夹，需要添加--force强制生成
 hugo new site . --force
-</code></pre></div><blockquote><p>建议这里提交一次修改</p></blockquote><h3 id=heading-3>主题配置</h3><p>到(hugo theme)[<a href=https://themes.gohugo.io/>https://themes.gohugo.io/</a>]选取主题，然后按照主题指示安装配置， 以maupassant为例</p><ol><li>下载主题</li></ol><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>git submodule add https://github.com/shit-hub/maupassant-hugo.git themes/maupassant-hugo
-</code></pre></div><ol start=2><li>配置config.toml</li></ol><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml>baseURL = <span style=color:#e6db74>&#34;https://blog.shit-hub.com&#34;</span>
-languageCode = <span style=color:#e6db74>&#34;zh-CN&#34;</span>
-title = <span style=color:#e6db74>&#34;SH IT Blog&#34;</span>
-hasCJKLanguage = <span style=color:#66d9ef>true</span>
-theme = <span style=color:#e6db74>&#34;maupassant-hugo&#34;</span>
-enableRobotsTXT = <span style=color:#66d9ef>true</span>
-PaginatePath = <span style=color:#e6db74>&#34;page&#34;</span>
+</code></pre><blockquote><p>建议这里提交一次修改</p></blockquote><h3 id=heading-3>主题配置</h3><p>到(hugo theme)[<a href=https://themes.gohugo.io/>https://themes.gohugo.io/</a>]选取主题，然后按照主题指示安装配置， 以maupassant为例</p><ol><li>下载主题</li></ol><pre><code>git submodule add https://github.com/shit-hub/maupassant-hugo.git themes/maupassant-hugo
+</code></pre><ol start=2><li>配置config.toml</li></ol><pre><code>baseURL = &quot;https://blog.shit-hub.com&quot;
+languageCode = &quot;zh-CN&quot;
+title = &quot;SH IT Blog&quot;
+hasCJKLanguage = true
+theme = &quot;maupassant-hugo&quot;
+enableRobotsTXT = true
+PaginatePath = &quot;page&quot;
 
 [author]
-    name = <span style=color:#e6db74>&#34;Sanjo Heron&#34;</span>
-    homepage = <span style=color:#e6db74>&#34;https://www.shit-hub.com&#34;</span>
+    name = &quot;Sanjo Heron&quot;
+    homepage = &quot;https://www.shit-hub.com&quot;
 
 [params]
-    subtitle = <span style=color:#e6db74>&#34;&#34;</span>
-    description = <span style=color:#e6db74>&#34;&#34;</span>
-    keywords = <span style=color:#e6db74>&#34;Blog&#34;</span>
+    subtitle = &quot;&quot;
+    description = &quot;&quot;
+    keywords = &quot;Blog&quot;
 
-    customCSS = [<span style=color:#e6db74>&#34;style.extra.css&#34;</span>]
-    customJS = [<span style=color:#e6db74>&#34;app.extra.js&#34;</span>]
+    customCSS = [&quot;style.extra.css&quot;]
+    customJS = [&quot;app.extra.js&quot;]
 
 [params.utteranc]
-    repo = <span style=color:#e6db74>&#34;JokerQyou/comments&#34;</span>
-    issueTerm = <span style=color:#e6db74>&#34;url&#34;</span>
-    theme = <span style=color:#e6db74>&#34;github-light&#34;</span>
+    repo = &quot;JokerQyou/comments&quot;
+    issueTerm = &quot;url&quot;
+    theme = &quot;github-light&quot;
 
 [[menu.main]]
-    identifier = <span style=color:#e6db74>&#34;categories&#34;</span>
-    name = <span style=color:#e6db74>&#34;Categories&#34;</span>
-    url = <span style=color:#e6db74>&#34;/categories/&#34;</span>
-    weight = <span style=color:#ae81ff>1</span>
+    identifier = &quot;categories&quot;
+    name = &quot;Categories&quot;
+    url = &quot;/categories/&quot;
+    weight = 1
 
 [[menu.main]]
-    identifier = <span style=color:#e6db74>&#34;tags&#34;</span>
-    name = <span style=color:#e6db74>&#34;Tags&#34;</span>
-    url = <span style=color:#e6db74>&#34;/tags/&#34;</span>
-    weight = <span style=color:#ae81ff>2</span>
+    identifier = &quot;tags&quot;
+    name = &quot;Tags&quot;
+    url = &quot;/tags/&quot;
+    weight = 2
 
 [[menu.main]]
-    identifier = <span style=color:#e6db74>&#34;archives&#34;</span>
-    name = <span style=color:#e6db74>&#34;Archives&#34;</span>
-    url = <span style=color:#e6db74>&#34;/archives/&#34;</span>
-    weight = <span style=color:#ae81ff>3</span>
+    identifier = &quot;archives&quot;
+    name = &quot;Archives&quot;
+    url = &quot;/archives/&quot;
+    weight = 3
 
 [[menu.main]]
-    identifier = <span style=color:#e6db74>&#34;about&#34;</span>
-    name = <span style=color:#e6db74>&#34;About&#34;</span>
-    url = <span style=color:#e6db74>&#34;/about/&#34;</span>
-    weight = <span style=color:#ae81ff>4</span>
-</code></pre></div><blockquote><p>可调用<code>hugo server</code>命令，然后访问localhost:1313即可预览，建议预览满意后提交一次修改</p></blockquote><h2 id=github-action>配置Github Action</h2><h3 id=heading-4>生成密钥对</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>ssh-keygen -t rsa -b <span style=color:#ae81ff>4096</span> -C <span style=color:#e6db74>&#34;your_email&#34;</span> -f gh-pages -N <span style=color:#e6db74>&#34;&#34;</span>
-</code></pre></div><h3 id=heading-5>配置项目</h3><ol><li>在 GitHub 网站中打开项目的设置页面</li><li>将刚生成的 ssh 公钥（gh-pages.pub）添加到 Deploy Keys 并选择 Allow write access</li><li>将私钥添加到 Secrets，命名为 ACTIONS_DEPLOY_KEY</li></ol><h3 id=action>制定Action</h3><p>打开项目中的Action，添加新的workflow，添加以下代码</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>name: github pages
+    identifier = &quot;about&quot;
+    name = &quot;About&quot;
+    url = &quot;/about/&quot;
+    weight = 4
+</code></pre><blockquote><p>可调用<code>hugo server</code>命令，然后访问localhost:1313即可预览，建议预览满意后提交一次修改</p></blockquote><h2 id=github-action>配置Github Action</h2><h3 id=heading-4>生成密钥对</h3><pre><code>ssh-keygen -t rsa -b 4096 -C &quot;your_email&quot; -f gh-pages -N &quot;&quot;
+</code></pre><h3 id=heading-5>配置项目</h3><ol><li>在 GitHub 网站中打开项目的设置页面</li><li>将刚生成的 ssh 公钥（gh-pages.pub）添加到 Deploy Keys 并选择 Allow write access</li><li>将私钥添加到 Secrets，命名为 ACTIONS_DEPLOY_KEY</li></ol><h3 id=action>制定Action</h3><p>打开项目中的Action，添加新的workflow，添加以下代码</p><pre><code>name: github pages
 
 on:
   push:
@@ -74,12 +74,12 @@ jobs:
     steps:
     - uses: actions/checkout@v1
       with:
-        submodules: <span style=color:#66d9ef>true</span>
+        submodules: true
 
     - name: Setup Hugo
-      uses: peaceiris/actions-hugo@v2<span style=color:#ae81ff>.3</span><span style=color:#ae81ff>.1</span>
+      uses: peaceiris/actions-hugo@v2.3.1
       with:
-        hugo-version: <span style=color:#e6db74>&#39;0.61.0&#39;</span>
+        hugo-version: '0.61.0'
 
     - name: Build
       run: hugo --minify
@@ -88,12 +88,13 @@ jobs:
       run: touch ./public/.nojekyll
 
     - name: Deploy
-      uses: peaceiris/actions-gh-pages@v2<span style=color:#ae81ff>.5</span><span style=color:#ae81ff>.1</span>
+      uses: peaceiris/actions-gh-pages@v2.5.1
       env:
         ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         PUBLISH_BRANCH: master
         PUBLISH_DIR: ./public
-</code></pre></div><h2 id=heading-6>测试</h2><p>提交本地修改测试是否成功</p></div><div class="post-meta meta-tags"><ul class=clearfix><li><a href=/tags/hugo>Hugo</a></li></ul></div></article><div id=comments><span class=widget-title>Comment Closed</span></div></div></div><div id=secondary><section class=widget><form id=search method=post action=https://duckduckgo.com/><input type=text name=q maxlength=255 placeholder=Search...>
+</code></pre><h2 id=heading-6>测试</h2><p>提交本地修改测试是否成功</p></div><div class="post-meta meta-tags"><ul class=clearfix><li><a href=/tags/hugo>Hugo</a></li></ul></div></article><div id=comments><span class=widget-title>Comment</span>
+<script src=https://utteranc.es/client.js repo=shit-hub/blog issue-term=url theme=github-light crossorigin=anonymous async></script></div></div></div><div id=secondary><section class=widget><form id=search method=post action=https://duckduckgo.com/><input type=text name=q maxlength=255 placeholder=Search...>
 <input type=hidden name=sites value=https://blog.shit-hub.com>
 <input type=hidden name=kp value=-2>
 <input type=hidden name=kh value=1>
