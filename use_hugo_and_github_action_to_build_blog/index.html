@@ -1,0 +1,202 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge, chrome=1"><title>Use hugo and github action to build blog - SH IT Blog</title><meta name=Description content="This article shows how to use hugo and github action to build blog."><meta property="og:title" content="Use hugo and github action to build blog"><meta property="og:description" content="This article shows how to use hugo and github action to build blog."><meta property="og:type" content="article"><meta property="og:url" content="https://blog.shit-hub.com/use_hugo_and_github_action_to_build_blog/"><meta property="og:image" content="https://blog.shit-hub.com/logo.png"><meta property="article:published_time" content="2020-06-02T09:22:29+08:00"><meta property="article:modified_time" content="2020-06-02T23:28:16+08:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://blog.shit-hub.com/logo.png"><meta name=twitter:title content="Use hugo and github action to build blog"><meta name=twitter:description content="This article shows how to use hugo and github action to build blog."><meta name=application-name content="SH IT Blog"><meta name=apple-mobile-web-app-title content="SH IT Blog"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel=icon href=/logo.svg><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://blog.shit-hub.com/use_hugo_and_github_action_to_build_blog/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Use hugo and github action to build blog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/blog.shit-hub.com\/use_hugo_and_github_action_to_build_blog\/"},"image":{"@type":"ImageObject","url":"https:\/\/blog.shit-hub.com\/logo.png","width":800,"height":600},"genre":"posts","keywords":"Blog, Hugo","wordcount":440,"url":"https:\/\/blog.shit-hub.com\/use_hugo_and_github_action_to_build_blog\/","datePublished":"2020-06-02T09:22:29+08:00","dateModified":"2020-06-02T23:28:16+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"xxxx","logo":{"@type":"ImageObject","url":"https:\/\/blog.shit-hub.com\/logo.png","width":127,"height":40}},"author":{"@type":"Person","name":"sanjo heron"},"description":"This article shows how to use hugo and github action to build blog."}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':('auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark'))&&document.body.setAttribute('theme','dark');</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title="SH IT Blog"><span class=header-title-pre><i class="far fa-kiss-wink-heart fa-fw"></i></span>SH IT Blog</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/ title=Posts>Posts </a><a class=menu-item href=/categories/ title=Categories>Categories </a><a class=menu-item href=/tags/ title=Tags>Tags </a><a class=menu-item href=/about/ title=About>About </a><a class=menu-item href=https://github.com/shit-hub/blog title=GitHub rel="noopener noreffer" target=_blank><i class="fab fa-github fa-fw"></i></a><span class="menu-item delimiter"></span><a href=javascript:void(0); class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+<select class=language-select id=language-select-desktop onchange="location=this.value;"><option value=/use_hugo_and_github_action_to_build_blog/ selected>English</option><option value=/zh-cn/use_hugo_and_github_action_to_build_blog/>简体中文</option></select>
+</a><span class="menu-item search" id=search-desktop><input type=text placeholder="Search titles or contents..." id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw"></i></a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw"></i></a><span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i></span></span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title="SH IT Blog"><span class=header-title-pre><i class="far fa-kiss-wink-heart fa-fw"></i></span>SH IT Blog</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw"></i></a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw"></i></a><span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=/posts/ title=Posts>Posts</a><a class=menu-item href=/categories/ title=Categories>Categories</a><a class=menu-item href=/tags/ title=Tags>Tags</a><a class=menu-item href=/about/ title=About>About</a><a class=menu-item href=https://github.com/shit-hub/blog title=GitHub rel="noopener noreffer" target=_blank><i class="fab fa-github fa-fw"></i></a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i></a><a href=javascript:void(0); class=menu-item title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+<select class=language-select onchange="location=this.value;"><option value=/use_hugo_and_github_action_to_build_blog/ selected>English</option><option value=/zh-cn/use_hugo_and_github_action_to_build_blog/>简体中文</option></select></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Use hugo and github action to build blog</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=https://www.shit-hub.com title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>sanjo heron</a></span>&nbsp;<span class=post-category>included in <a href=/categories/devops/><i class="far fa-folder fa-fw"></i>Devops</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2020-06-02>2020-06-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;440 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;<span id=/use_hugo_and_github_action_to_build_blog/ class=leancloud_visitors data-flag-title="Use hugo and github action to build blog">
+<i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;views
+</span>&nbsp;</div></div><div class="details toc" id=toc-static kept><div class="details-summary toc-title"><span>Contents</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#hugo-install>Hugo Install</a><ul><li><a href=#download-binary-file>Download binary file</a></li><li><a href=#decompression>Decompression</a></li></ul></li><li><a href=#create-repository>Create Repository</a></li><li><a href=#build-blog>Build Blog</a><ul><li><a href=#initial>Initial</a></li><li><a href=#config-theme>Config theme</a></li></ul></li><li><a href=#config-github-action>Config Github Action</a><ul><li><a href=#build-ken-pair>Build ken pair</a></li><li><a href=#config-repository>Config Repository</a></li><li><a href=#config-action>Config Action</a></li></ul></li><li><a href=#config-github-page>Config Github Page</a></li><li><a href=#text>Text</a></li></ul></nav></div></div><div class=content id=content><h2 id=hugo-install>Hugo Install</h2><h3 id=download-binary-file>Download binary file</h3><p>Choose the file in <a href=https://github.com/gohugoio/hugo/releases target=_blank rel="noopener noreffer">Hugo</a>, Example</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>wget https://github.com/gohugoio/hugo/releases/download/v0.71.1/hugo_0.71.1_Linux-64bit.tar.gz
+</code></pre></td></tr></table></div></div><h3 id=decompression>Decompression</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>tar zxvf hugo_0.71.1_Linux-64bit.tar.gz -C /usr/bin hugo
+</code></pre></td></tr></table></div></div><h2 id=create-repository>Create Repository</h2><p>create a repository in github which name &ldquo;<username>.github.io&rdquo;, then download it to the local.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>git clone https://github.com/&lt;username&gt;/&lt;username&gt;.github.io.git
+</code></pre></td></tr></table></div></div><p>create .gitignore and commit, then push it to keep master branch</p><p>checkout to hugo branch</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>git checkout -b hugo
+</code></pre></td></tr></table></div></div><h2 id=build-blog>Build Blog</h2><h3 id=initial>Initial</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=nb>cd</span> blog
+<span class=c1># because .git folder exist，need to use &#39;--force&#39; to build</span>
+hugo new site . --force
+</code></pre></td></tr></table></div></div><blockquote><p>advise commit the change here</p></blockquote><h3 id=config-theme>Config theme</h3><p>Choose themes in (hugo theme)[https://themes.gohugo.io/]</p><p>Recommended themes：</p><ul><li>maupassant-hugo(simple and easy to use)</li><li>LoveIt(powerful)</li></ul><p>Example:</p><ol><li>Download themes</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>git submodule add https://github.com/shit-hub/maupassant-hugo.git themes/maupassant-hugo
+</code></pre></td></tr></table></div></div><ol start=2><li>config <code>config.toml</code></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-yaml data-lang=yaml>baseURL<span class=w> </span>=<span class=w> </span><span class=s2>&#34;https://blog.shit-hub.com&#34;</span><span class=w>
+</span><span class=w></span>languageCode<span class=w> </span>=<span class=w> </span><span class=s2>&#34;zh-CN&#34;</span><span class=w>
+</span><span class=w></span>title<span class=w> </span>=<span class=w> </span><span class=s2>&#34;SH IT Blog&#34;</span><span class=w>
+</span><span class=w></span>hasCJKLanguage<span class=w> </span>=<span class=w> </span><span class=kc>true</span><span class=w>
+</span><span class=w></span>theme<span class=w> </span>=<span class=w> </span><span class=s2>&#34;maupassant-hugo&#34;</span><span class=w>
+</span><span class=w></span>enableRobotsTXT<span class=w> </span>=<span class=w> </span><span class=kc>true</span><span class=w>
+</span><span class=w></span>PaginatePath<span class=w> </span>=<span class=w> </span><span class=s2>&#34;page&#34;</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=p>[</span>author<span class=p>]</span><span class=w>
+</span><span class=w>    </span>name<span class=w> </span>=<span class=w> </span><span class=s2>&#34;Sanjo Heron&#34;</span><span class=w>
+</span><span class=w>    </span>homepage<span class=w> </span>=<span class=w> </span><span class=s2>&#34;https://www.shit-hub.com&#34;</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=p>[</span>params<span class=p>]</span><span class=w>
+</span><span class=w>    </span>subtitle<span class=w> </span>=<span class=w> </span><span class=s2>&#34;&#34;</span><span class=w>
+</span><span class=w>    </span>description<span class=w> </span>=<span class=w> </span><span class=s2>&#34;&#34;</span><span class=w>
+</span><span class=w>    </span>keywords<span class=w> </span>=<span class=w> </span><span class=s2>&#34;Blog&#34;</span><span class=w>
+</span><span class=w>
+</span><span class=w>    </span>customCSS<span class=w> </span>=<span class=w> </span><span class=p>[</span><span class=s2>&#34;style.extra.css&#34;</span><span class=p>]</span><span class=w>
+</span><span class=w>    </span>customJS<span class=w> </span>=<span class=w> </span><span class=p>[</span><span class=s2>&#34;app.extra.js&#34;</span><span class=p>]</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=p>[</span>params.utteranc<span class=p>]</span><span class=w>
+</span><span class=w>    </span>repo<span class=w> </span>=<span class=w> </span><span class=s2>&#34;shit-hub/blog&#34;</span><span class=w>
+</span><span class=w>    </span>issueTerm<span class=w> </span>=<span class=w> </span><span class=s2>&#34;url&#34;</span><span class=w>
+</span><span class=w>    </span>theme<span class=w> </span>=<span class=w> </span><span class=s2>&#34;github-light&#34;</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=p>[[</span>menu.main<span class=p>]]</span><span class=w>
+</span><span class=w>    </span>identifier<span class=w> </span>=<span class=w> </span><span class=s2>&#34;categories&#34;</span><span class=w>
+</span><span class=w>    </span>name<span class=w> </span>=<span class=w> </span><span class=s2>&#34;Categories&#34;</span><span class=w>
+</span><span class=w>    </span>url<span class=w> </span>=<span class=w> </span><span class=s2>&#34;/categories/&#34;</span><span class=w>
+</span><span class=w>    </span>weight<span class=w> </span>=<span class=w> </span><span class=m>1</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=p>[[</span>menu.main<span class=p>]]</span><span class=w>
+</span><span class=w>    </span>identifier<span class=w> </span>=<span class=w> </span><span class=s2>&#34;tags&#34;</span><span class=w>
+</span><span class=w>    </span>name<span class=w> </span>=<span class=w> </span><span class=s2>&#34;Tags&#34;</span><span class=w>
+</span><span class=w>    </span>url<span class=w> </span>=<span class=w> </span><span class=s2>&#34;/tags/&#34;</span><span class=w>
+</span><span class=w>    </span>weight<span class=w> </span>=<span class=w> </span><span class=m>2</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=p>[[</span>menu.main<span class=p>]]</span><span class=w>
+</span><span class=w>    </span>identifier<span class=w> </span>=<span class=w> </span><span class=s2>&#34;archives&#34;</span><span class=w>
+</span><span class=w>    </span>name<span class=w> </span>=<span class=w> </span><span class=s2>&#34;Archives&#34;</span><span class=w>
+</span><span class=w>    </span>url<span class=w> </span>=<span class=w> </span><span class=s2>&#34;/archives/&#34;</span><span class=w>
+</span><span class=w>    </span>weight<span class=w> </span>=<span class=w> </span><span class=m>3</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=p>[[</span>menu.main<span class=p>]]</span><span class=w>
+</span><span class=w>    </span>identifier<span class=w> </span>=<span class=w> </span><span class=s2>&#34;about&#34;</span><span class=w>
+</span><span class=w>    </span>name<span class=w> </span>=<span class=w> </span><span class=s2>&#34;About&#34;</span><span class=w>
+</span><span class=w>    </span>url<span class=w> </span>=<span class=w> </span><span class=s2>&#34;/about/&#34;</span><span class=w>
+</span><span class=w>    </span>weight<span class=w> </span>=<span class=w> </span><span class=m>4</span><span class=w>
+</span></code></pre></td></tr></table></div></div><p>Use following command to create basic page:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>hugo new about.md
+hugo new archives.md
+</code></pre></td></tr></table></div></div><p>archives.md content:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>---
+title: &#34;Archives&#34;
+type: archives
+---
+</code></pre></td></tr></table></div></div><p>you can enter some personal information in about.md，then config <code>traft:false</code></p><p>Run <code>hugo server</code> command ，then open chrome to access localhost:1313 to preview.</p><h2 id=config-github-action>Config Github Action</h2><p>Github action is github&rsquo;s official CI/CD tools</p><h3 id=build-ken-pair>Build ken pair</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>ssh-keygen -t rsa -b <span class=m>4096</span> -C <span class=s2>&#34;your_email&#34;</span> -f gh-pages -N <span class=s2>&#34;&#34;</span>
+</code></pre></td></tr></table></div></div><h3 id=config-repository>Config Repository</h3><ol><li>Open the repository&rsquo;s settings page on the GitHub website</li><li>Add the newly generated SSH public key (gh-pages.pub) to <code>Deploy Keys</code> and select <code>Allow write access</code></li><li>Add the private KEY (gh-pages) to the Secrets and name it &ldquo;ACTIONS DEPLOY KEY&rdquo;</li></ol><h3 id=config-action>Config Action</h3><p>create path <code>.github/workflow/</code>，then create <code>hugo.yml</code> file in the path，content as follow：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-yml data-lang=yml><span class=k>name</span><span class=p>:</span><span class=w> </span>github<span class=w> </span>pages<span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=k>on</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span><span class=k>push</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=k>branches</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span>- hugo<span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=k>jobs</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span><span class=k>build-deploy</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=k>runs-on</span><span class=p>:</span><span class=w> </span>ubuntu-latest<span class=w>
+</span><span class=w>    </span><span class=k>steps</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span>- <span class=k>uses</span><span class=p>:</span><span class=w> </span>actions/checkout@v1<span class=w>
+</span><span class=w>      </span><span class=k>with</span><span class=p>:</span><span class=w>
+</span><span class=w>        </span><span class=k>submodules</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span><span class=w>
+</span><span class=w>    </span>- <span class=k>name</span><span class=p>:</span><span class=w> </span>Setup<span class=w> </span>Hugo<span class=w>
+</span><span class=w>      </span><span class=k>uses</span><span class=p>:</span><span class=w> </span>peaceiris/actions-hugo@v2<span class=m>.3.1</span><span class=w>
+</span><span class=w>      </span><span class=k>with</span><span class=p>:</span><span class=w>
+</span><span class=w>        </span><span class=k>hugo-version</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;0.61.0&#39;</span><span class=w>
+</span><span class=w>
+</span><span class=w>    </span>- <span class=k>name</span><span class=p>:</span><span class=w> </span>Build<span class=w>
+</span><span class=w>      </span><span class=k>run</span><span class=p>:</span><span class=w> </span>hugo<span class=w> </span>--minify<span class=w>
+</span><span class=w>
+</span><span class=w>    </span>- <span class=k>name</span><span class=p>:</span><span class=w> </span>add<span class=w> </span>nojekyll<span class=w>
+</span><span class=w>      </span><span class=k>run</span><span class=p>:</span><span class=w> </span>touch<span class=w> </span>./public/.nojekyll<span class=w>
+</span><span class=w>
+</span><span class=w>    </span>- <span class=k>name</span><span class=p>:</span><span class=w> </span>Deploy<span class=w>
+</span><span class=w>      </span><span class=k>uses</span><span class=p>:</span><span class=w> </span>peaceiris/actions-gh-pages@v2<span class=m>.5.1</span><span class=w>
+</span><span class=w>      </span><span class=k>env</span><span class=p>:</span><span class=w>
+</span><span class=w>        </span><span class=k>ACTIONS_DEPLOY_KEY</span><span class=p>:</span><span class=w> </span>${{<span class=w> </span>secrets.ACTIONS_DEPLOY_KEY<span class=w> </span>}}<span class=w>
+</span><span class=w>        </span><span class=k>PUBLISH_BRANCH</span><span class=p>:</span><span class=w> </span>master<span class=w>
+</span><span class=w>        </span><span class=k>PUBLISH_DIR</span><span class=p>:</span><span class=w> </span>./public<span class=w>
+</span></code></pre></td></tr></table></div></div><h2 id=config-github-page>Config Github Page</h2><ul><li>In <code>setting->Options->Github Pages</code> of the project, select <code>master branch</code> in <code>Source</code>.</li><li>If you have a custom domain name, you can write it on the custom domain.</li></ul><blockquote><p>After saving, you will add a CNAME file in the master branch of the project , It will be overwritten during the next deployment, so you need to put the CNAME file in the <code>static</code> directory of Hugo, the CNAME file will be automatically generated in the next deployment</p></blockquote><h2 id=text>Text</h2><p>Submit the hugo branch to github, and then check whether the action is executed. After successful generation, visit <username>.github.io/blog in chrome to view the blog content.</p></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>Updated on 2020-06-02&nbsp;<a class=git-hash href=https://github.com/shit-hub/blog/commit/fcc6cd544557f69fbb6d781855e0e3d16c426976 target=_blank title='commit by Sanjo Heron(sanjo.heron@gmail.com) fcc6cd544557f69fbb6d781855e0e3d16c426976: [Upd] Change themes to "LoveIt"'>
+<i class="fas fa-hashtag fa-fw"></i>fcc6cd5</a></span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md><span><a class=link-to-markdown href=/use_hugo_and_github_action_to_build_blog/index.md target=_blank>Read Markdown</a></span></div><div class=post-info-share><span></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/blog/>Blog</a>,&nbsp;<a href=/tags/hugo/>Hugo</a></section><section><span><a href=javascript:void(0); onclick=window.history.back();>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span></section></div><div class=post-nav></div></div><div id=comments><div id=valine class=comment></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://valine.js.org/>Valine</a>.</noscript></div></article></div></main></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw"></i></a><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment fa-fw"></i></a></div><link rel=stylesheet href=/lib/valine/valine.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/lightgallery.js@1.1.3/dist/css/lightgallery.min.css><style>.lg-toolbar .lg-icon::after{color:#999}</style><script type=text/javascript src=https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lightgallery.js@1.1.3/dist/js/lightgallery.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.1.0/dist/lg-thumbnail.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lg-zoom.js@1.0.1/dist/lg-zoom.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js></script><script type=text/javascript>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{"valine":{"appId":"QGzwQXOqs5JOhN4RGPOkR2mR-MdYXbMMI","appKey":"WBmoGyJtbqUswvfLh6L8iEBr","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"en","pageSize":10,"placeholder":"Your comment ...","recordIP":true,"serverURLs":"https://leancloud.hugoloveit.com","visitor":true}},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type=text/javascript src=/js/theme.min.js></script></body></html>
